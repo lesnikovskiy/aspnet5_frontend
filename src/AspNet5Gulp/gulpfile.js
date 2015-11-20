@@ -20,8 +20,11 @@ gulp.task("clean", function() {
 		.pipe(clean());
 });
 
-gulp.task("watch", ["watch"], function() {
-	gulp.watch("*.js", ["build"]);
+gulp.task("watch", function() {
+	var watcher = gulp.watch("./wwwroot/**/*.js", ["build"]);
+	watcher.on("change", function (event) {
+		console.log("File " + event.path + " was " + event.type + ", running tasks ...");
+	});
 });
 
-gulp.task("default", ["build", "watch"]);
+gulp.task("default", ["watch"]);
