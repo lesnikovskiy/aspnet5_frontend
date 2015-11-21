@@ -12,7 +12,9 @@
 		<tr>
 			<td data-bind="text: id"></td>
 			<td data-bind="text: name"></td>
-			<td data-bind="text: email"></td>
+			<td>
+				<a href="#" data-bind="text:email, attr: {href: 'mailto:' + email}"></a>
+			</td>
 			<td data-bind="text: phone"></td>
 		</tr>
 	</tbody>
