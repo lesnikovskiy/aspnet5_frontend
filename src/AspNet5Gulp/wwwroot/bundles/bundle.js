@@ -16799,7 +16799,7 @@ _knockout2.default.components.register("about-page", { template: _about2.default
 
 _knockout2.default.applyBindings({ route: _Router2.default.currentRoute });
 
-},{"./Router":7,"./components/about-page/about.html":9,"./components/home-page/home":11,"./components/nav-bar/nav-bar":13,"./components/user-list/user-list":16,"knockout":6}],9:[function(require,module,exports){
+},{"./Router":7,"./components/about-page/about.html":9,"./components/home-page/home":11,"./components/nav-bar/nav-bar":13,"./components/user-list/user-list":15,"knockout":6}],9:[function(require,module,exports){
 module.exports = "<h2>About</h2>\r\n\r\n<p>This component has no viewmodel. It's just an HTML template.</p>\r\n";
 
 },{}],10:[function(require,module,exports){
@@ -16882,35 +16882,9 @@ exports.default = {
 };
 
 },{"./nav-bar.html":12,"knockout":6}],14:[function(require,module,exports){
-"use strict";
+module.exports = "<h1>User List</h1>\r\n<table class=\"table\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>Id</th>\r\n\t\t\t<th>Name</th>\r\n\t\t\t<th>Email</th>\r\n\t\t\t<th>Phone</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody data-bind=\"foreach: userList\">\r\n\t\t<tr>\r\n\t\t\t<td data-bind=\"text: id\"></td>\r\n\t\t\t<td data-bind=\"text: name\"></td>\r\n\t\t\t<td>\r\n\t\t\t\t<span class=\"glyphicon glyphicon-envelope\"></span>\r\n\t\t\t\t<a href=\"#\" data-bind=\"text:email, attr: {href: 'mailto:' + email}\"></a>\r\n\t\t\t</td>\r\n\t\t\t<td>\r\n\t\t\t\t<span class=\"glyphicon glyphicon-phone\"></span>\r\n\t\t\t\t<span data-bind=\"text: phone\"></span>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>";
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _knockout = require("knockout");
-
-var _knockout2 = _interopRequireDefault(_knockout);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var User = function User(params) {
-	_classCallCheck(this, User);
-
-	this.id = _knockout2.default.observable(params.Id);
-	this.name = _knockout2.default.observable(params.Name);
-	this.email = _knockout2.default.observable(params.Email);
-	this.phone = _knockout2.default.observable(params.Phone);
-};
-
-exports.default = User;
-
-},{"knockout":6}],15:[function(require,module,exports){
-module.exports = "<h1>User List</h1>\r\n<table class=\"table\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>Id</th>\r\n\t\t\t<th>Name</th>\r\n\t\t\t<th>Email</th>\r\n\t\t\t<th>Phone</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody data-bind=\"foreach: userList\">\r\n\t\t<tr>\r\n\t\t\t<td data-bind=\"text: id\"></td>\r\n\t\t\t<td data-bind=\"text: name\"></td>\r\n\t\t\t<td>\r\n\t\t\t\t<a href=\"#\" data-bind=\"text:email, attr: {href: 'mailto:' + email}\"></a>\r\n\t\t\t</td>\r\n\t\t\t<td data-bind=\"text: phone\"></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>";
-
-},{}],16:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16925,7 +16899,7 @@ var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _User = require("./User");
+var _User = require("../../models/User");
 
 var _User2 = _interopRequireDefault(_User);
 
@@ -16962,4 +16936,30 @@ exports.default = {
 	template: _userList2.default
 };
 
-},{"./User":14,"./user-list.html":15,"jquery":5,"knockout":6}]},{},[8])
+},{"../../models/User":16,"./user-list.html":14,"jquery":5,"knockout":6}],16:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _knockout = require("knockout");
+
+var _knockout2 = _interopRequireDefault(_knockout);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var User = function User(params) {
+	_classCallCheck(this, User);
+
+	this.id = _knockout2.default.observable(params.Id);
+	this.name = _knockout2.default.observable(params.Name);
+	this.email = _knockout2.default.observable(params.Email);
+	this.phone = _knockout2.default.observable(params.Phone);
+};
+
+exports.default = User;
+
+},{"knockout":6}]},{},[8])

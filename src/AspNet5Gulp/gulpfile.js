@@ -21,7 +21,7 @@ gulp.task("clean", function() {
 });
 
 gulp.task("watch", function() {
-	var watcher = gulp.watch("./wwwroot/**/*.js", ["build"]);
+	var watcher = gulp.watch(["./wwwroot/**/*.js", "./wwwroot/components/**/*.html"], ["build"]);
 	watcher.on("change", function (event) {
 		console.log("File " + event.path + " was " + event.type + ", running tasks ...");
 	});

@@ -1,6 +1,6 @@
 import ko from "knockout";
 import $ from "jquery";
-import User from "./User";
+import User from "../../models/User";
 import template from "./user-list.html";
 
 class UserList {

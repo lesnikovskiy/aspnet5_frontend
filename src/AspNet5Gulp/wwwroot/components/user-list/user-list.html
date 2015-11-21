@@ -13,9 +13,13 @@
 			<td data-bind="text: id"></td>
 			<td data-bind="text: name"></td>
 			<td>
+				<span class="glyphicon glyphicon-envelope"></span>
 				<a href="#" data-bind="text:email, attr: {href: 'mailto:' + email}"></a>
 			</td>
-			<td data-bind="text: phone"></td>
+			<td>
+				<span class="glyphicon glyphicon-phone"></span>
+				<span data-bind="text: phone"></span>
+			</td>
 		</tr>
 	</tbody>
 </table>
